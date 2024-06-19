@@ -190,3 +190,8 @@ input {
   width: auto;
   height: auto;
 }
+.bg {
+  background-color: var(--white);
+  color: var(--mine-shaft);
+  border-radius: var(--border-radius);
+}

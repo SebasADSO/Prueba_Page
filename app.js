@@ -36,7 +36,7 @@ console.log(document.body.firstChild.nodeName);
 const btn = dom.getElementById("test");
 let i = 0;
 btn.onclick = function () {
-  if (i===0) {
+  if (i === 0) {
     let div = document.createElement("div");
     div.className = "good";
     div.innerHTML = "Todo a salido correcto";
@@ -52,3 +52,57 @@ btn.onclick = function () {
     i--
   }
 };
+
+// Ejercicio
+const padre = dom.getElementById("cards");
+
+let prueba = padre.children
+
+let e = [...prueba];
+
+console.log(prueba)
+
+e.map((a, i) => {
+  if (i % 2 !== 0) {
+    console.log(i)
+    a.classList.toggle("bg")
+    let w = a.children
+    let r = [...w]
+    r.map((y) => {
+      let u = y.children
+      let p = [...u]
+      console.log(p)
+      p.map((q) => {
+        q.classList.toggle("bg")
+      })
+    })
+  }
+})
+
+const $formulario = dom.getElementById("search")
+
+$formulario.setAttribute("autocomplete", "on")
+
+const $input = dom.querySelector(".search__form > input")
+
+$input.setAttribute("autocomplete", "off")
+
+$input.removeAttribute("placeholder")
+
+console.log($input)
+
+///  ///
+
+const html = dom.documentElement
+console.log(html)
+const $white = getComputedStyle(html).getPropertyValue("--white")
+const $black = getComputedStyle(html).getPropertyValue("--mine-shaft")
+
+// html.style.setProperty("--mine-shaft", "#fff")
+// html.style.setProperty("--white", "#000")
+
+const prueba123 = dom.querySelector(".card__paragraph")
+
+console.log(prueba123)
+
+prueba123.innerHTML = `Hola <b>ADSO</b>`
